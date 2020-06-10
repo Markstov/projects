@@ -1,0 +1,7 @@
+Jora Borya Petya Oleg Kolya
+obj1 obj2 obj3 obj4
+- w r -
+- - - r
+w - r -
+r r - -
+- - w w

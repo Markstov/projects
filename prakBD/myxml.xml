@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<catalog>
+	<Computer id="1">
+		<name>MSI</name>
+		<model>gx150</model>
+		<price>50000</price>
+	</Computer>
+	<Computer id="2">
+		<name>ASUS</name>
+		<model>mz10</model>
+		<price>45000</price>
+	</Computer>
+	<Computer id="3">
+		<name>Lenovo</name>
+		<model>ideapad330</model>
+		<price>47999</price>
+	</Computer>
+	<Computer id="4">
+		<name>MSI</name>
+		<model>hyperz500</model>
+		<price>99999</price>
+	</Computer>
+</catalog>

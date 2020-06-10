@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>
+            Заявки
+        </title>
+    <head>
+    <body>
+        <h1>
+            Заявки
+        </h1>
+        {% for i in queryset %}
+        <div>
+            <a href = '/details/{{i.id}}'>
+                <h2>
+                    {{i.title}}
+                </h2>
+            </a>
+            <p>
+                {{i.content}}
+            </p>
+            <p>
+                <i>
+                    {{i.status}}
+                </i>
+            </p>
+             <p>
+                <i>
+                    {{i.status1}}
+                </i>
+            </p>
+             <p>
+                <i>
+                    {{i.status2}}
+                </i>
+            </p>
+             <p>
+                <i>
+                    {{i.post_author}}
+                </i>
+            </p>
+        </div>
+        {%endfor%}
+    </body>
+</html>

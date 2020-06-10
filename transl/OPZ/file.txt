@@ -1,0 +1,29 @@
+var a,b:integer;
+begin
+a:=3;
+for i:=1 to 3 do:
+begin
+if a>i then b:=i else b:=a;
+end;
+
+
+procedure f(a,b:integer):
+begin
+a:=a-3;
+end.
+
+var i,j:integer;
+begin
+if i>j then num1:=i else num1 :=j;
+for i:=1 to 5 do
+begin
+num1:=num1-1;
+end;
+
+
+  integer :: a, b
+  do while ( i .lt. 3 )
+  if ( a .gt. 1 ) then
+    b = i
+  else  b = a
+  end do

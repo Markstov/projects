@@ -1,0 +1,30 @@
+program quadratic
+
+  real :: a, b, c
+  real :: discriminant
+  real :: x1, x2
+
+  read * , a, b, c
+
+  discriminant = b ** 2 - 4 * a * c
+
+  do while ( x1 .lt. 3 )
+  if ( discriminant .gt. 0 ) then
+
+    x1 = ( -b + discriminant ) / ( 2 * a )
+    x2 = ( -b - discriminant ) / ( 2 * a )
+    print * , "Real roots:"
+    print * , x1, x2
+
+  else if ( discriminant .ge. 0 ) then
+
+    x1 = - b / ( 2 * a )
+    print * , "Real root:"
+    print * , x1
+  else
+
+    print * , "No real roots."
+  end if
+  end if
+  end do
+end program quadratic

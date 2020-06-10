@@ -1,0 +1,7 @@
+command M(x:t1, y:t12, z:t3)
+create object z of type t3
+create subject y of type t2
+create object x of type t4
+create subject p1 of type t12
+create object j of type t1
+end

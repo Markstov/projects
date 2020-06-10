@@ -1,0 +1,109 @@
+from threading import Thread
+
+import tkinter as tk
+
+import time
+
+from PIL import ImageTk, Image
+
+coordsCat = dict()
+
+coordsDog = dict()
+
+coordsCat['x'] = 50
+
+coordsCat['y'] = 50
+
+coordsCat['vert_dir'] = 0
+
+coordsCat['hor_dir'] = 0
+
+coordsDog['x'] = 50
+
+coordsDog['y'] = 150
+
+coordsDog['vert_dir'] = 0
+
+coordsDog['hor_dir'] = 0
+
+size = 600
+
+root = tk.Tk()
+
+canvas = tk.Canvas(root, width=size, height=size, bg='white')
+
+canvas.pack()
+
+cat = 'D:/Учеба/3 курс/5 семестр/Операционные системы/Лабы/Винда/1.png'
+
+imgCat = Image.open(cat)
+
+dog = "D:/Учеба/3 курс/5 семестр/Операционные системы/Лабы/Винда/2.png"
+
+imgDog = Image.open(dog)
+
+imageCat = ImageTk.PhotoImage(imgCat)
+
+imagesprite = canvas.create_image(coordsCat['x'],coordsCat['y'],image=imageCat)
+
+imageDog = ImageTk.PhotoImage(imgDog)
+
+imagesprite1= canvas.create_image(coordsDog['x'],coordsDog['y'],image=imageDog)
+
+def moveHoriz (who,coords) :
+
+while True :
+
+if coords['x'] >= size - 50 :
+
+coords['hor_dir'] = 1 # 1 - вправо 0 - влево //// 1 - вверх 0 - вниз
+
+elif coords ['x'] <= 50 :
+
+coords['hor_dir'] = 0
+
+if coords['hor_dir'] == 0 :
+
+canvas.coords(who,coords['x'],coords['y'])
+
+coords['x']+=1
+
+else :
+
+canvas.coords(who,coords['x'],coords['y'])
+
+coords['x']-=1
+
+time.sleep(0.005)
+
+def moveVert (who,coords) :
+
+while True :
+
+if coords['y'] >= size - 50 :
+
+coords['vert_dir'] = 1
+
+elif coords['y'] <= 50 :
+
+coords['vert_dir'] = 0
+
+if coords['vert_dir'] == 0:
+
+canvas.coords(who,coords['x'],coords['y'])
+
+coords['y']+=1
+
+else :
+
+canvas.coords(who,coords['x'],coords['y'])
+
+coords['y']-=1
+
+time.sleep(0.005)
+
+Thread(target=moveVert,args=[imagesprite,coordsCat]).start()
+
+Thread(target=moveHoriz,args=[imagesprite1,coordsDog]).start()
+
+root.mainloop()
